@@ -7,17 +7,14 @@ ans = 0
 end = False
 n, k = input().split()
 n,k = int(n),int(k)
-for i in range(init_odd,n+1,jump):
-    count+=1
-    if(count == k):
-        print(i)
-        end = True
-        break
-#print(count)
-if not end :   
-    for i in range(init_even,n+1,jump):
-        #print(i)
-        count+=1
-        if(count == k):
-            print(i)
-            break
+
+if(n%2 != 0):
+    if( k <= int(n/2)+1):
+        print(k*2-1)
+    else:
+        print((k-int(n/2)-1)*2)
+else:
+    if( k <= int(n/2)):   
+        print(k*2-1)
+    else:
+        print((k-int(n/2))*2)
